@@ -1,0 +1,110 @@
+{
+ "actions": [],
+ "allow_bulk_edit": 1,
+ "allow_rename": 1,
+ "autoname": "BUD-.YYYY.-.####",
+ "creation": "2026-09-22 15:08:07.748862",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "department",
+  "fiscal_year",
+  "fiscal_quatar",
+  "total_allocated",
+  "notes"
+ ],
+ "fields": [
+  {
+   "fieldname": "department",
+   "fieldtype": "Link",
+   "label": "Department",
+   "options": "Department"
+  },
+  {
+   "fieldname": "fiscal_year",
+   "fieldtype": "Int",
+   "in_list_view": 1,
+   "label": "Fiscal Year",
+   "reqd": 1
+  },
+  {
+   "fieldname": "fiscal_quatar",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "label": "Fiscal Quatar",
+   "options": "Q1\nQ2\nQ3\nQ4",
+   "reqd": 1
+  },
+  {
+   "fieldname": "total_allocated",
+   "fieldtype": "Currency",
+   "in_list_view": 1,
+   "label": "Total Allocated",
+   "reqd": 1
+  },
+  {
+   "fieldname": "notes",
+   "fieldtype": "Small Text",
+   "label": "Notes"
+  }
+ ],
+ "grid_page_length": 50,
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2026-09-23 10:39:42.068923",
+ "modified_by": "Administrator",
+ "module": "spendgate",
+ "name": "Budget",
+ "naming_rule": "Expression",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  },
+  {
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "SG Department Head",
+   "share": 1
+  },
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "SG Finance Manager",
+   "share": 1,
+   "write": 1
+  },
+  {
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "SG Staff",
+   "share": 1
+  }
+ ],
+ "row_format": "Dynamic",
+ "rows_threshold_for_grid_search": 20,
+ "sort_field": "creation",
+ "sort_order": "DESC",
+ "states": [],
+ "track_changes": 1
+}
