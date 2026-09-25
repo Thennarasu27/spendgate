@@ -5,6 +5,31 @@ app_description = "budget"
 app_email = "thennarasum2705@gmail.com"
 app_license = "mit"
 
+# override_doctype_class = {
+#     "Expense Claim": "spendgate.overrides.expense_claim.ExpenseClaim"
+# }
+
+after_install = "spendgate.install.after_install"
+#group - f
+doc_events = {
+    "*": {
+        "on_update": "spendgate.audit.log_change",
+        "on_submit": "spendgate.audit.log_change",
+        "on_cancel": "spendgate.audit.log_change",
+    },
+ 
+    "Expense Claim": {
+        "validate": "spendgate.expense_claim_validate.validate",
+        "before_submit": "spendgate.expense_claim_validate.before_submit",
+        "on_submit": "spendgate.expense_claim_validate.on_submit",
+        "on_cancel": "spendgate.expense_claim_validate.on_cancel",
+        "on_trash": "spendgate.expense_claim_validate.on_trash",
+        # "on_update": "spendgate.expense_claim_validate.on_update",
+    }
+}
+doctype_js = {
+    "Expense Claim": "public/js/expense_claim.js"
+}
 # Apps
 # ------------------
 
@@ -43,7 +68,7 @@ app_license = "mit"
 # page_js = {"page" : "public/js/file.js"}
 
 # include js in doctype views
-# doctype_js = {"doctype" : "public/js/doctype.js"}
+# doctype_js = {"doctype" : "public/js/doctype.js"} 
 # doctype_list_js = {"doctype" : "public/js/doctype_list.js"}
 # doctype_tree_js = {"doctype" : "public/js/doctype_tree.js"}
 # doctype_calendar_js = {"doctype" : "public/js/doctype_calendar.js"}
